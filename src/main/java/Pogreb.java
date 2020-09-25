@@ -11,7 +11,7 @@ public class Pogreb {
 
     public void put(Can can) {
         Random onePercentChance = new Random();
-        if(onePercentChance.nextInt(100) == 1) {
+        if(onePercentChance.nextInt(101) == 1) {
             throw new RuntimeException("Ну вооот, и эту с пола слизывать");
         };
 
@@ -23,7 +23,7 @@ public class Pogreb {
         for (Can can : pogreb) {
             if (can.getSticker().equals(sticker)) {
                 pogreb.remove(can);
-                if (twoPercentChance.nextInt(50) == 1) {
+                if (twoPercentChance.nextInt(51) == 1) {
                     throw new RuntimeException("А ручки то корявые");
                 }
                 return can;
