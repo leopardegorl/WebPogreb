@@ -5,10 +5,9 @@ public class Test {
       Pogreb pogreb = new Pogreb();
       Can can = new Can("Rude cucumber");
       pogreb.put(can);
-        System.out.println(can);
-//        pogreb.put(new Can ("Bluck bluck"));
-//        pogreb.get("Bluck bluck");
-//        System.out.println(pogreb);
+//      pogreb.get("Rude cucumber");
+        pogreb.showPogreb();
+
        }
     }
 

@@ -6,23 +6,22 @@ public class Pogreb {
 
     public Pogreb() {
         System.out.println("Надпись на стене: С любовью из погреба");
-
+        cansInitialisation();
     }
 
-    public List<Can> cansInitialisation() {
+    private void cansInitialisation() {
         Random random = new Random();
         for (int i = 0; i < random.nextInt(10); i++) {
-            int random2 = random.nextInt();
+            int random2 = random.nextInt(200);
             pogreb.add(new Can("Banka" + random2));
         }
     }
 
     public void put(Can can) {
         Random onePercentChance = new Random();
-        if(onePercentChance.nextInt(101) == 1) {
+        if (onePercentChance.nextInt(101) == 1) {
             throw new RuntimeException("Ну вооот, и эту с пола слизывать");
-        };
-
+        }
         pogreb.add(can);
     }
 
@@ -38,6 +37,12 @@ public class Pogreb {
             }
         }
         throw new NoSuchElementException("There are no such can in pogreb.");
+    }
+
+    public void showPogreb() {
+        for (Can can:pogreb) {
+            System.out.println(can);
+        }
     }
 }
 
