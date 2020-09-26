@@ -9,6 +9,14 @@ public class Pogreb {
 
     }
 
+    public List<Can> cansInitialisation() {
+        Random random = new Random();
+        for (int i = 0; i < random.nextInt(10); i++) {
+            int random2 = random.nextInt();
+            pogreb.add(new Can("Banka" + random2));
+        }
+    }
+
     public void put(Can can) {
         Random onePercentChance = new Random();
         if(onePercentChance.nextInt(101) == 1) {

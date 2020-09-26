@@ -8,25 +8,19 @@ import java.util.Random;
 public class Can {
     private final String sticker;
     private final List<Vegetable> composition = new ArrayList<>();
-    public Can (String sticker) {
+
+    public Can(String sticker) {
         this.sticker = sticker;
         canRandomiser();
     }
 
-    public List<Vegetable> canRandomiser() {
-        Random quantity = new Random();
+    private void canRandomiser() {
+        Random random = new Random();
+        Vegetable[] vegetables = Vegetable.values();
 
-        for (int i = 0; i <= quantity.nextInt(10); i++) {
-            composition.add(Vegetable.CABBAGE);
+        for (int i = 0; i <= random.nextInt(10); i++) {
+            int random2 = random.nextInt(vegetables.length);
+            composition.add(vegetables[random2]);
         }
-
-        for (int i = 0; i <= quantity.nextInt(10); i++) {
-            composition.add(Vegetable.CARROT);
-        }
-
-        for (int i = 0; i <= quantity.nextInt(10); i++) {
-            composition.add(Vegetable.TOMATO);
-        }
-        return composition;
     }
 }
